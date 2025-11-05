@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Infinity Vector 02</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">Infinity · Vector 02</div>
+    <button id="loginBtn">Login</button>
+  </div>
+
+  <main class="grid">
+    <section class="card">
+      <h1>Morning Handle</h1>
+      <p id="taskText">Tap a tile to load today’s piece.</p>
+      <div class="tiles">
+        <button class="tile" data-load="new-portal">New Portal Shell</button>
+        <button class="tile" data-load="token-page">Token / PayPal</button>
+        <button class="tile" data-load="socializer">Socializer UI</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Output</h2>
+      <pre id="outputBox">Nothing loaded yet.</pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
