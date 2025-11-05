@@ -2,33 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Infinity Vector 02</title>
+  <title>Infinity · Vector API</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <!-- our shared styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="topbar">
-    <div class="brand">Infinity · Vector 02</div>
-    <button id="loginBtn">Login</button>
-  </div>
+  <!-- top bar -->
+  <header class="topbar">
+    <div class="brand">Infinity · Vector-API</div>
+    <a href="portal.html" style="font-size:.55rem;">Portal →</a>
+  </header>
 
-  <main class="grid">
+  <!-- main layout -->
+  <main class="layout">
+    <!-- NEW infinity welcome card -->
     <section class="card">
-      <h1>Morning Handle</h1>
-      <p id="taskText">Tap a tile to load today’s piece.</p>
-      <div class="tiles">
-        <button class="tile" data-load="new-portal">New Portal Shell</button>
-        <button class="tile" data-load="token-page">Token / PayPal</button>
-        <button class="tile" data-load="socializer">Socializer UI</button>
+      <h1 style="font-size:.85rem;margin-bottom:.35rem;">Welcome, Infinity builder</h1>
+      <p class="muted">
+        This is the web root. From here you can go to the Portal, Marketplace, Radio, Rogers,
+        and still keep your old test code below.
+      </p>
+      <div class="grid">
+        <a class="tile" href="portal.html">Open Portal</a>
+        <a class="tile" href="apps/marketplace.html">Marketplace</a>
+        <a class="tile" href="apps/radio.html">Infinity Radio</a>
+        <a class="tile" href="apps/rogers.html">Rogers Chat</a>
+        <a class="tile" href="apps/bank.html">Bank / Wallet</a>
       </div>
     </section>
 
+    <!-- YOUR OLD STUFF -->
     <section class="card">
-      <h2>Output</h2>
-      <pre id="outputBox">Nothing loaded yet.</pre>
+      <h2 style="font-size:.7rem;">Legacy page content</h2>
+      <p class="muted">This is whatever you had in index.html before. You can delete it later once you're confident.</p>
+
+      <!-- 🔻🔻🔻 PASTE YOUR OLD INDEX.HTML BODY CONTENT HERE 🔻🔻🔻 -->
+      <div id="legacy">
+        <!-- example: if your old index had a <div>Hello</div>, put it in here -->
+        <!-- leave this here for now so we don't lose your earliest test -->
+      </div>
+      <!-- 🔺🔺🔺 END OF OLD CONTENT 🔺🔺🔺 -->
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <div id="infinity-footer"></div>
+
+  <!-- optional: if you already uploaded infinity-core.js, this will draw the footer -->
+  <script type="module">
+    import { renderInfinityFooter } from './infinity-core.js';
+    renderInfinityFooter();
+  </script>
 </body>
 </html>
+
