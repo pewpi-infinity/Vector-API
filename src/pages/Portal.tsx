@@ -55,10 +55,14 @@ const Portal: React.FC = () => {
               <span className="nav-icon">📊</span>
               Dashboard
             </a>
-            <a href="#vectors" className="nav-item" onClick={(e) => { e.preventDefault(); navigate('/vectoring'); }}>
+            <button 
+              className="nav-item" 
+              onClick={() => navigate('/vectoring')}
+              style={{ border: 'none', background: 'none', width: '100%', textAlign: 'left' }}
+            >
               <span className="nav-icon">🔢</span>
               Vector Operations
-            </a>
+            </button>
             <a href="#neuromorphic" className="nav-item">
               <span className="nav-icon">🧠</span>
               Neuromorphic

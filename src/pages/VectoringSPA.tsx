@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Vector, VectorOperation } from '../types';
+import { generateId, calculateMagnitude, normalizeVector } from '../utils/vectorMath';
 import '../styles/VectoringSPA.css';
 
 const VectoringSPA: React.FC = () => {
@@ -9,31 +10,23 @@ const VectoringSPA: React.FC = () => {
 
   useEffect(() => {
     // Initialize with sample vectors
+    const createSampleVector = (id: string, name: string, dimensions: number[]): Vector => {
+      const magnitude = calculateMagnitude(dimensions);
+      const direction = normalizeVector(dimensions);
+      return {
+        id,
+        name,
+        dimensions,
+        magnitude,
+        direction,
+        timestamp: new Date(),
+      };
+    };
+
     const sampleVectors: Vector[] = [
-      {
-        id: '1',
-        name: 'Vector Alpha',
-        dimensions: [3.5, 2.1, 4.7],
-        magnitude: 6.3,
-        direction: [0.56, 0.33, 0.75],
-        timestamp: new Date(),
-      },
-      {
-        id: '2',
-        name: 'Vector Beta',
-        dimensions: [1.2, 5.4, 2.8],
-        magnitude: 6.2,
-        direction: [0.19, 0.87, 0.45],
-        timestamp: new Date(),
-      },
-      {
-        id: '3',
-        name: 'Vector Gamma',
-        dimensions: [4.1, 3.3, 1.6],
-        magnitude: 5.5,
-        direction: [0.75, 0.60, 0.29],
-        timestamp: new Date(),
-      },
+      createSampleVector('1', 'Vector Alpha', [3.5, 2.1, 4.7]),
+      createSampleVector('2', 'Vector Beta', [1.2, 5.4, 2.8]),
+      createSampleVector('3', 'Vector Gamma', [4.1, 3.3, 1.6]),
     ];
     setVectors(sampleVectors);
 
@@ -60,20 +53,20 @@ const VectoringSPA: React.FC = () => {
   }, []);
 
   const handleCreateVector = () => {
+    const dimensions = [
+      Math.random() * 5,
+      Math.random() * 5,
+      Math.random() * 5,
+    ];
+    const magnitude = calculateMagnitude(dimensions);
+    const direction = normalizeVector(dimensions);
+    
     const newVector: Vector = {
-      id: String(vectors.length + 1),
+      id: generateId(),
       name: `Vector ${String.fromCharCode(65 + vectors.length)}`,
-      dimensions: [
-        Math.random() * 5,
-        Math.random() * 5,
-        Math.random() * 5,
-      ],
-      magnitude: Math.random() * 10,
-      direction: [
-        Math.random(),
-        Math.random(),
-        Math.random(),
-      ],
+      dimensions,
+      magnitude,
+      direction,
       timestamp: new Date(),
     };
     setVectors([...vectors, newVector]);

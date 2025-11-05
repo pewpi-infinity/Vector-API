@@ -75,6 +75,9 @@
   text-decoration: none;
   transition: all 0.3s;
   border-left: 3px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .nav-item:hover {

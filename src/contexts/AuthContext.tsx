@@ -31,10 +31,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setAuthState(prev => ({ ...prev, isLoading: true }));
     
     try {
-      // Simulate API call - In production, this would call your backend
+      // DEMO: Simulate API call - In production, replace with actual backend authentication
+      // Example: const response = await fetch('/api/auth/login', { method: 'POST', body: JSON.stringify(credentials) })
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // For demo purposes, accept any non-empty credentials
+      // DEMO: Accept any non-empty credentials for demonstration purposes
+      // In production, validate against backend and handle errors properly
       if (credentials.username && credentials.password) {
         const user: User = {
           id: '1',
