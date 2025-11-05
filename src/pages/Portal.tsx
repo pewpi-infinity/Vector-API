@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { PortalConfig } from '../types';
 import '../styles/Portal.css';
 
 const Portal: React.FC = () => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [config, setConfig] = useState<PortalConfig>({
     theme: 'dark',
     vectorVisualization: true,
@@ -53,7 +55,7 @@ const Portal: React.FC = () => {
               <span className="nav-icon">📊</span>
               Dashboard
             </a>
-            <a href="#vectors" className="nav-item">
+            <a href="#vectors" className="nav-item" onClick={(e) => { e.preventDefault(); navigate('/vectoring'); }}>
               <span className="nav-icon">🔢</span>
               Vector Operations
             </a>
