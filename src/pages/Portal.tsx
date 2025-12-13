@@ -14,7 +14,7 @@ const Portal: React.FC = () => {
     neuromorphicMode: true,
   });
 
-  const handleConfigChange = (key: keyof PortalConfig, value: boolean | string) => {
+  const handleConfigChange = <K extends keyof PortalConfig>(key: K, value: PortalConfig[K]) => {
     setConfig(prev => {
       // Only update the specific property, avoid recreating the entire object unnecessarily
       if (prev[key] === value) return prev;
@@ -163,7 +163,7 @@ const Portal: React.FC = () => {
                 <select
                   className="form-input"
                   value={config.theme}
-                  onChange={(e) => handleConfigChange('theme', e.target.value)}
+                  onChange={(e) => handleConfigChange('theme', e.target.value as PortalConfig['theme'])}
                 >
                   <option value="dark">Dark</option>
                   <option value="light">Light</option>
