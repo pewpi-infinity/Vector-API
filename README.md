@@ -108,6 +108,7 @@ For the demo version, you can log in with any username and password. In producti
 1. **Login**: Navigate to the login page and enter any credentials
 2. **Portal**: Access the Infinity Portal dashboard to view system metrics and configure settings
 3. **Vectoring**: Access the Vectoring SPA to create and manipulate vectors
+4. **IoT Devices**: Manage Mongoose.OS devices and view real-time telemetry
 
 ## 🧪 Development
 
@@ -125,6 +126,7 @@ npm run lint
 - **Vite 5.0** - Build tool and dev server
 - **React Router 6.20** - Client-side routing
 - **CSS3** - Styling with modern features
+- **Mongoose.OS** - IoT firmware integration
 
 ## 🎨 Design Features
 
@@ -142,6 +144,35 @@ This project is part of the Infinity OS ecosystem.
 ## 👥 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📡 Mongoose.OS Integration
+
+Vector-API now includes full integration with [Mongoose.OS](https://mongoose-os.com/) for IoT device connectivity. This allows edge devices (ESP32, ESP8266) to send vector data and telemetry directly to the Vector-API system.
+
+### Features
+- Real-time device management
+- Vector data transmission from IoT devices
+- Device telemetry monitoring (uptime, memory, WiFi status)
+- RPC command interface
+- MQTT messaging support
+
+### Quick Start
+
+1. Navigate to the `mongoose-os` directory for firmware:
+   ```bash
+   cd mongoose-os
+   ```
+
+2. Follow the [Mongoose.OS setup guide](./mongoose-os/README.md) for detailed instructions on:
+   - Installing Mongoose.OS toolchain
+   - Flashing firmware to devices
+   - Configuring device connections
+   - Sending vector data from edge devices
+
+3. Access the IoT Device Manager in the web app:
+   - Log in to the Vector-API application
+   - Navigate to **Portal → IoT Devices**
+   - Register and monitor your Mongoose.OS devices
 
 ## 🔮 Future Enhancements
 

@@ -5,6 +5,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Portal from './pages/Portal';
 import VectoringSPA from './pages/VectoringSPA';
+import DeviceManager from './pages/DeviceManager';
 import './styles/index.css';
 import './styles/App.css';
 
@@ -28,6 +29,14 @@ const App: React.FC = () => {
               element={
                 <ProtectedRoute>
                   <VectoringSPA />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/devices"
+              element={
+                <ProtectedRoute>
+                  <DeviceManager />
                 </ProtectedRoute>
               }
             />

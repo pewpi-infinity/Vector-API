@@ -69,6 +69,14 @@ const Portal: React.FC = () => {
               <span className="nav-icon">🔢</span>
               Vector Operations
             </button>
+            <button 
+              className="nav-item" 
+              onClick={() => navigate('/devices')}
+              style={{ border: 'none', background: 'none', width: '100%', textAlign: 'left' }}
+            >
+              <span className="nav-icon">📡</span>
+              IoT Devices
+            </button>
             <a href="#neuromorphic" className="nav-item">
               <span className="nav-icon">🧠</span>
               Neuromorphic
