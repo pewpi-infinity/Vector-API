@@ -10,4 +10,40 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Infinity · Home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Infinity · Home</div>
+    <a href="login.html" style="font-size:.55rem;">Login →</a>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h1 style="font-size:.85rem;margin-bottom:.3rem;">Welcome, Infinity builder</h1>
+      <p class="muted">If you’re not logged in yet, hit Login. If you are, go straight to the Portal.</p>
+      <div class="grid">
+        <a class="tile" href="login.html">Login</a>
+        <a class="tile" href="portal.html">Portal</a>
+        <a class="tile" href="apps/marketplace.html">Marketplace</a>
+        <a class="tile" href="apps/rogers.html">Rogers Chat</a>
+        <a class="tile" href="apps/radio.html">Radio</a>
+        <a class="tile" href="apps/bank.html">Bank</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="infinity-footer"></div>
+
+  <script type="module">
+    import { renderInfinityFooter } from './infinity-core.js';
+    renderInfinityFooter();
+  </script>
+</body>
 </html>
