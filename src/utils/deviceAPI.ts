@@ -159,7 +159,7 @@ export class DeviceAPI {
   }
 
   // Send command to device via RPC (simulated)
-  async sendCommand(deviceId: string, method: string, params: object): Promise<any> {
+  async sendCommand(deviceId: string, method: string, params: object): Promise<{ success: boolean; method: string; params: object; timestamp: number }> {
     const device = this.devices.get(deviceId);
     if (!device) {
       throw new Error(`Device ${deviceId} not found`);

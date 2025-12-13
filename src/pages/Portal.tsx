@@ -18,9 +18,7 @@ const Portal: React.FC = () => {
     setConfig(prev => {
       // Only update the specific property, avoid recreating the entire object unnecessarily
       if (prev[key] === value) return prev;
-      const updated = { ...prev };
-      updated[key] = value;
-      return updated;
+      return { ...prev, [key]: value };
     });
   };
 

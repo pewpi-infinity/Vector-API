@@ -7,10 +7,15 @@ const DeviceManager: React.FC = () => {
   const [devices, setDevices] = useState<IoTDevice[]>([]);
   const [selectedDevice, setSelectedDevice] = useState<IoTDevice | null>(null);
   const [showAddForm, setShowAddForm] = useState(false);
-  const [newDevice, setNewDevice] = useState({
+  const [newDevice, setNewDevice] = useState<{
+    deviceId: string;
+    name: string;
+    type: 'esp32' | 'esp8266' | 'other';
+    firmware: string;
+  }>({
     deviceId: '',
     name: '',
-    type: 'esp32' as const,
+    type: 'esp32',
     firmware: 'mongoose-os-1.0',
   });
 
@@ -138,7 +143,7 @@ const DeviceManager: React.FC = () => {
                 <label>Device Type</label>
                 <select
                   value={newDevice.type}
-                  onChange={(e) => setNewDevice({ ...newDevice, type: e.target.value as any })}
+                  onChange={(e) => setNewDevice({ ...newDevice, type: e.target.value as 'esp32' | 'esp8266' | 'other' })}
                 >
                   <option value="esp32">ESP32</option>
                   <option value="esp8266">ESP8266</option>

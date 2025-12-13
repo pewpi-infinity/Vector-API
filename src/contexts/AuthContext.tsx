@@ -68,6 +68,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       } else {
         throw new Error('An unknown error occurred during login.');
       }
+    }
   }, []);
 
   const logout = useCallback(() => {
