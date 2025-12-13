@@ -232,9 +232,30 @@ const VectoringSPA: React.FC = () => {
               </div>
               
               <div className="panel-actions">
-                <button className="button-primary">Transform</button>
-                <button className="button-secondary">Normalize</button>
-                <button className="button-secondary">Clone</button>
+                <button
+                  className="button-primary"
+                  disabled
+                  aria-disabled="true"
+                  title="Not yet implemented"
+                >
+                  Transform
+                </button>
+                <button
+                  className="button-secondary"
+                  disabled
+                  aria-disabled="true"
+                  title="Not yet implemented"
+                >
+                  Normalize
+                </button>
+                <button
+                  className="button-secondary"
+                  disabled
+                  aria-disabled="true"
+                  title="Not yet implemented"
+                >
+                  Clone
+                </button>
               </div>
             </div>
           </section>
