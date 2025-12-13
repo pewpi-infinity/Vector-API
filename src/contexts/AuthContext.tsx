@@ -56,10 +56,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       } else {
         throw new Error('Invalid credentials');
       }
-    } catch (error) {
+    } catch (error: unknown) {
       setAuthState(prev => ({ ...prev, isLoading: false }));
-      throw error;
-    }
+      if (error instanceof Error) {
+        // Provide more specific error messages based on error type/message
+        if (error.message === 'Invalid credentials') {
+          throw new Error('Invalid username or password. Please try again.');
+        } else {
+          throw new Error(`Login failed: ${error.message}`);
+        }
+      } else {
+        throw new Error('An unknown error occurred during login.');
+      }
   }, []);
 
   const logout = useCallback(() => {
