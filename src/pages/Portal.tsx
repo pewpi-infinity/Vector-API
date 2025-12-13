@@ -18,9 +18,7 @@ const Portal: React.FC = () => {
     setConfig(prev => {
       // Only update the specific property, avoid recreating the entire object unnecessarily
       if (prev[key] === value) return prev;
-      const updated = { ...prev };
-      updated[key] = value;
-      return updated;
+      return { ...prev, [key]: value };
     });
   };
 
@@ -68,6 +66,14 @@ const Portal: React.FC = () => {
             >
               <span className="nav-icon">🔢</span>
               Vector Operations
+            </button>
+            <button 
+              className="nav-item" 
+              onClick={() => navigate('/devices')}
+              style={{ border: 'none', background: 'none', width: '100%', textAlign: 'left' }}
+            >
+              <span className="nav-icon">📡</span>
+              IoT Devices
             </button>
             <a href="#neuromorphic" className="nav-item">
               <span className="nav-icon">🧠</span>

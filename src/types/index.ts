@@ -40,3 +40,31 @@ export interface PortalConfig {
   realTimeUpdates: boolean;
   neuromorphicMode: boolean;
 }
+
+export interface IoTDevice {
+  id: string;
+  deviceId: string;
+  name: string;
+  type: 'esp32' | 'esp8266' | 'other';
+  status: 'online' | 'offline' | 'error';
+  lastSeen: Date;
+  firmware: string;
+  ipAddress?: string;
+  uptime?: number;
+  freeMemory?: number;
+  vectorsSent?: number;
+}
+
+export interface DeviceTelemetry {
+  deviceId: string;
+  timestamp: Date;
+  vector: {
+    x: number;
+    y: number;
+    z: number;
+    magnitude: number;
+  };
+  uptime: number;
+  freeRam: number;
+  wifiConnected: boolean;
+}
