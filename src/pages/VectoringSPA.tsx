@@ -109,6 +109,15 @@ const VectoringSPA: React.FC = () => {
                 key={vector.id}
                 className={`vector-card ${selectedVector?.id === vector.id ? 'selected' : ''}`}
                 onClick={() => setSelectedVector(vector)}
+                tabIndex={0}
+                role="button"
+                onKeyDown={e => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    setSelectedVector(vector);
+                    // Prevent scrolling when Space is pressed
+                    e.preventDefault();
+                  }
+                }}
               >
                 <div className="vector-header">
                   <h3>{vector.name}</h3>
