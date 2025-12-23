@@ -152,3 +152,24 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - Export/Import functionality
 - User role management
 - API documentation
+
+---
+
+## 🧱 Research Notes (mixed)
+**Timestamp:** 2025-12-23T10:59:54Z
+
+### 🟨 Extracted Data
+- Repo files: 22
+- Code present: 4
+
+### 🩷 Investigative
+What is missing, blocked, or undefined.
+
+### 🟩 Engineering / Tools
+What advances this repo fastest.
+
+### 🟥 Routes Worth More
+Two next build paths with reasoning.
+
+### 🟧 Decisions
+Immediate next step and why.
